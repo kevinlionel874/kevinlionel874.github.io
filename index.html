@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xiaoxing Chen · Portfolio</title>
+  <meta name="description" content="Xiaoxing Chen, first-year student at the University of Illinois Urbana-Champaign planning to study Electrical Engineering. Projects in embedded systems, web apps and AI tools.">
+  <meta name="theme-color" content="#13294b">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Apply saved theme and LED color before first paint to avoid a flash.
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+        var led = localStorage.getItem('led');
+        if (led) document.documentElement.dataset.led = led;
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#top" aria-label="Xiaoxing Chen, back to top">
+        <span class="brand-mark" aria-hidden="true">XC</span>
+        <span class="brand-name">Xiaoxing Chen</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle light / dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- PIN 01 · HERO -->
+    <section id="top" class="hero">
+      <div class="hero-text">
+        <p class="pin">PIN 01 · HELLO</p>
+        <h1>Xiaoxing Chen</h1>
+        <p class="role">First-year student at the <strong>University of Illinois Urbana-Champaign</strong>, planning to study <strong>Electrical Engineering</strong>.</p>
+        <p class="tagline">I like building things that sit between hardware and software: microcontrollers, web apps, and AI tools that solve problems I actually have.</p>
+        <div class="cta">
+          <a class="button primary" href="#projects">See my projects</a>
+          <a class="button" href="mailto:xc86@illinois.edu">Email me</a>
+          <a class="button ghost" href="https://github.com/kevinlionel874" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+
+      <aside class="led-card" aria-labelledby="led-title">
+        <p class="pin" id="led-title">BAND-GAP PICKER</p>
+        <p class="led-help">Every LED color comes from a different semiconductor band gap. Pick one to recolor this site.</p>
+        <div class="led-row" role="radiogroup" aria-label="LED color">
+          <button class="led" type="button" role="radio" data-led="red"    data-nm="630" aria-label="Red LED, about 630 nanometers"><span></span>Red</button>
+          <button class="led" type="button" role="radio" data-led="amber"  data-nm="590" aria-label="Amber LED, about 590 nanometers"><span></span>Amber</button>
+          <button class="led" type="button" role="radio" data-led="green"  data-nm="525" aria-label="Green LED, about 525 nanometers"><span></span>Green</button>
+          <button class="led" type="button" role="radio" data-led="blue"   data-nm="470" aria-label="Blue LED, about 470 nanometers"><span></span>Blue</button>
+        </div>
+        <p class="led-readout" aria-live="polite">
+          <span class="mono">λ ≈ <b id="led-nm">590</b> nm</span>
+          <span class="mono">E = hc/λ ≈ <b id="led-ev">2.10</b> eV</span>
+        </p>
+        <p class="led-note">My planned STM32 I-V curve tracer will measure this for real by comparing each LED's turn-on voltage.</p>
+      </aside>
+    </section>
+
+    <!-- PIN 02 · ABOUT -->
+    <section id="about" class="section">
+      <p class="pin">PIN 02 · ABOUT</p>
+      <h2>About me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a first-year student at the University of Illinois Urbana-Champaign, and I plan to study Electrical Engineering. The part of EE I'm most curious about is semiconductors: how a slab of doped silicon turns into a transistor, a sensor, or an LED.</p>
+          <p>This semester I'm teaching myself embedded systems on an STM32 "Blue Pill" board, starting from a single blinking LED and keeping a public log of every problem I hit and how I fixed it. My goal for Spring 2027 is an LED I-V curve tracer that connects that embedded work back to semiconductor physics.</p>
+          <p>Outside of hardware, I build software when I run into a problem I want solved. At a hackathon I helped build F1 Compass, which helps international students check what their visa rules allow, and I made Study Tracker because I wanted to see where my study hours were actually going.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>School</dt><dd>University of Illinois Urbana-Champaign</dd></div>
+          <div><dt>Focus</dt><dd>Electrical Engineering (planned) · semiconductors</dd></div>
+          <div><dt>Coursework</dt><dd>CS 124 Honors (Intro to Computer Science)</dd></div>
+          <div><dt>Currently building</dt><dd>STM32 projects on a Blue Pill board</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- PIN 03 · SKILLS -->
+    <section id="skills" class="section">
+      <p class="pin">PIN 03 · SKILLS</p>
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <article class="skill-group">
+          <h3>Languages</h3>
+          <ul class="chips">
+            <li>Python</li><li>TypeScript</li><li>JavaScript</li><li>C</li><li>Java</li><li>HTML &amp; CSS</li>
+          </ul>
+        </article>
+        <article class="skill-group">
+          <h3>Embedded &amp; hardware</h3>
+          <ul class="chips">
+            <li>STM32 (ARM Cortex-M3)</li><li>ST-Link / SWD debugging</li><li>UART serial</li><li>GPIO &amp; ADC</li>
+          </ul>
+        </article>
+        <article class="skill-group">
+          <h3>Web &amp; AI</h3>
+          <ul class="chips">
+            <li>Next.js</li><li>React</li><li>Tailwind CSS</li><li>LLM APIs (NVIDIA Nemotron)</li><li>Tavily search</li><li>Progressive Web Apps</li>
+          </ul>
+        </article>
+        <article class="skill-group">
+          <h3>Tools</h3>
+          <ul class="chips">
+            <li>Git &amp; GitHub</li><li>Vercel</li><li>GitHub Pages</li><li>Command line</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PIN 04 · PROJECTS -->
+    <section id="projects" class="section">
+      <p class="pin">PIN 04 · PROJECTS</p>
+      <h2>Projects</h2>
+      <div class="projects-grid">
+
+        <article class="project">
+          <div class="project-head">
+            <h3>F1 Compass</h3>
+            <span class="badge">Hackathon · team project</span>
+          </div>
+          <p class="project-lede"><strong>Know before you work.</strong> A web app that tells international students on F-1 visas whether an activity (freelancing, a campus job, a hackathon prize) is likely allowed, with citations from official U.S. government sources.</p>
+          <ul class="project-points">
+            <li>A student asks a question in plain language; NVIDIA Nemotron models on Nebius Token Factory plan the search, Tavily searches only official sites like uscis.gov and ecfr.gov, and a reasoning model returns a color-coded verdict.</li>
+            <li>Every answer includes the legal paths (CPT / OPT), questions to ask the school's DSO, and a ready-to-send email.</li>
+            <li>Tested against a 30-question answer key: 25/30 correct, with results tracked for "dangerous" mistakes.</li>
+          </ul>
+          <ul class="chips small" aria-label="Technologies">
+            <li>Next.js</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>NVIDIA Nemotron</li><li>Tavily</li><li>Vercel</li>
+          </ul>
+          <div class="project-links">
+            <a class="button primary small" href="https://f1-compass.vercel.app" target="_blank" rel="noopener">Live demo ↗</a>
+            <a class="button small" href="https://github.com/kevinlionel874/f1-compass" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>Study Tracker</h3>
+            <span class="badge">Personal project</span>
+          </div>
+          <p class="project-lede"><strong>See where your study hours go.</strong> A study timer that tracks focused time per course and helps plan the week ahead.</p>
+          <ul class="project-points">
+            <li>Focus timer with pause, per-course pages with to-dos, and a weekly study planner.</li>
+            <li>Exports sessions to a calendar file (.ics) or CSV, supports study groups and a map of favorite study spots, and plays a recap of your progress.</li>
+            <li>Installable as a Progressive Web App with a service worker, so it opens offline like a phone app.</li>
+          </ul>
+          <ul class="chips small" aria-label="Technologies">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>PWA / service worker</li><li>GitHub Pages</li>
+          </ul>
+          <div class="project-links">
+            <a class="button primary small" href="https://kevinlionel874.github.io/study-tracker/" target="_blank" rel="noopener">Live demo ↗</a>
+            <a class="button small" href="https://github.com/kevinlionel874/study-tracker" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+      </div>
+      <p class="more">More of my work, including my STM32 learning log, is on <a href="https://github.com/kevinlionel874" target="_blank" rel="noopener">GitHub</a>.</p>
+    </section>
+
+    <!-- PIN 05 · CONTACT -->
+    <section id="contact" class="section contact">
+      <p class="pin">PIN 05 · CONTACT</p>
+      <h2>Get in touch</h2>
+      <p>I'm always happy to talk about embedded projects, semiconductors, or anything I've built here. Email is the best way to reach me.</p>
+      <div class="contact-list">
+        <a class="contact-item" href="mailto:xc86@illinois.edu">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">xc86@illinois.edu</span>
+        </a>
+        <a class="contact-item" href="https://github.com/kevinlionel874" target="_blank" rel="noopener">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/kevinlionel874</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> Xiaoxing Chen · Built with HTML, CSS and JavaScript · Hosted on GitHub Pages</p>
+    <a href="#top" class="to-top">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
