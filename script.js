@@ -74,24 +74,6 @@
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach(function (s) { if (s) navObserver.observe(s); });
-
-    /* ---------- Fade sections in as they scroll into view ---------- */
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!reduce) {
-      var targets = document.querySelectorAll('.section, .project, .skill-group');
-      var revealObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      Array.prototype.forEach.call(targets, function (el) {
-        el.classList.add('reveal');
-        revealObserver.observe(el);
-      });
-    }
   }
 
   /* ---------- Footer year ---------- */

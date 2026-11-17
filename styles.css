@@ -281,10 +281,6 @@ h3 { font-size: 20px; }
 .site-footer p { margin: 0; }
 .to-top { color: var(--ink-soft); }
 
-/* ---------- Reveal on scroll ---------- */
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.in { opacity: 1; transform: none; }
-
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; padding-top: 56px; gap: 32px; }
@@ -312,5 +308,4 @@ h3 { font-size: 20px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
-  .reveal { opacity: 1; transform: none; }
 }
